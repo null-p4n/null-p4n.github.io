@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Protect Your Privacy: Beware of Malware That Steals Chrome Cookies and Passwords.
+title: "Protect Your Privacy: Beware of Malware That Steals Chrome Cookies and Passwords."
 date: '2023-03-28 04:23:56 +0300'
 ---
 
