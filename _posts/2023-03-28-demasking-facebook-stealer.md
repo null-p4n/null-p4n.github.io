@@ -11,7 +11,7 @@ A couple of days ago I encountered what seems an ad for "ChatGPT-4" at first sig
 a .zip file hosted on a platform called Trello, a "tool that organizes your projects into boards" as they say on their website.
 ![2023-03-24_14-54](https://user-images.githubusercontent.com/60641238/228127422-0ba55182-a513-48c4-aa34-4d00ac4d05cb.png)
 
-We can say our [APT](Advanced persistent threat) is pretty organized but leaving jokes aside, a [cookie stealer](https://en.wikipedia.org/wiki/Session_hijacking) is pretty serious since a few days ago multiple malware alike we're deployed attacking youtubers like LinusTechTips or gaming studios like  [Electronic Arts. ](https://news.sophos.com/en-us/2022/08/18/cookie-stealing-the-new-perimeter-bypass/)
+We can say our [APT](Advanced persistent threat) is pretty organized but leaving jokes aside, a [cookie stealer](https://en.wikipedia.org/wiki/Session_hijacking) is a pretty serious threat since a few days ago multiple malware alike were deployed attacking youtubers like LinusTechTips or gaming studios like  [Electronic Arts. ](https://news.sophos.com/en-us/2022/08/18/cookie-stealing-the-new-perimeter-bypass/)
 
 After a brief look I took a sample of it in an enclosed environment and I started fingerprinting it using virus total, as I anticipated I encounterd a stealth virus "typically, a stealth virus can hide in the legitimate files, partitions or boot sectors of a computing device without alerting the antivirus software or notifying the user of its presence. Once injected into a computer, the virus enables the attackers to operate and gain control over parts of the system or the entire system." with a dimension of 800mb+ virus total couldn't scan it so we proceed with BINWALK to extract files from our .zip archive, and I encounterd a .msi ( microsoft installer ), i've proceed with extraction further and start looking for matching signatures action that was succesuful
 
@@ -47,3 +47,8 @@ After a brief look I took a sample of it in an enclosed environment and I starte
 > 06f159db143a3eaf9d20321535428325c9b157cecb4999fa567c7019f1258a8e  _CD19606A3DDEC13CA069CFDAC9580EA9
 > b73d06e9586ae2ee193f045f0b437c93cf1525a780f3599565611e16de82d775  _E43ECE427A504682B136311D646C0924
 > 78ee9334b57d75f3365b6ba570e5a55369728dd0376d26b0c92bd63c6537e216  _F0114D5337D54282AF05C021CAA515EF
+
+I took a hard look for a PE32 executable or any DLL and we picked "_E43ECE427A504682B136311D646C0924" as we can see from our "find" command it's exactly what we wanted, a PE32 windows executable, [virus total](https://www.virustotal.com/gui/file/b73d06e9586ae2ee193f045f0b437c93cf1525a780f3599565611e16de82d775) showed us that's malware but not exactly what it does or where it's C2 ( Command To Control ).
+
+I tried again with other solutions like [intezer.com](https://analyze.intezer.com/analyses/115627b7-293d-42f8-9aa4-0557cc7b9531) and [filescan.io](https://www.filescan.io/uploads/641da6019c109cf74b2f2b00/reports/d2899a08-75da-449b-8512-822c350b1613) where we can virtually deploy our sample on a virtual machine to observe its behavior intezer.com shows that our malware tried to extract data from chrome, extract data from registery key ![image](https://user-images.githubusercontent.com/60641238/228135263-9c512ae6-9fee-4dd8-8087-c9a514a787b1.png) .
+
