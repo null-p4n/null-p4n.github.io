@@ -50,7 +50,9 @@ After a brief look I took a sample of it in an enclosed environment and I starte
 
 I took a hard look for a PE32 executable or any DLL and we picked "_E43ECE427A504682B136311D646C0924" as we can see from our "find" command it's exactly what we wanted, a PE32 windows executable, [virus total](https://www.virustotal.com/gui/file/b73d06e9586ae2ee193f045f0b437c93cf1525a780f3599565611e16de82d775) showed us that's malware but not exactly what it does or where it's C2 ( Command To Control ).
 
-I tried again with other solutions like [intezer.com](https://analyze.intezer.com/analyses/115627b7-293d-42f8-9aa4-0557cc7b9531) and [filescan.io](https://www.filescan.io/uploads/641da6019c109cf74b2f2b00/reports/d2899a08-75da-449b-8512-822c350b1613) where we can virtually deploy our sample on a virtual machine to observe its behavior intezer.com shows that our malware tried to kill chrome and therefore extract data from sqli database stored in 
+I tried again with other solutions like [intezer.com](https://analyze.intezer.com/analyses/115627b7-293d-42f8-9aa4-0557cc7b9531) and [filescan.io](https://www.filescan.io/uploads/641da6019c109cf74b2f2b00/reports/d2899a08-75da-449b-8512-822c350b1613) where we can virtually deploy our sample on a virtual machine to observe its behavior. 
+
+Intezer.com shows that our malware tried to kill chrome and therefore extract data from sqli database stored in 
 
 > %APPDATA%/Google/Chrome 
 
