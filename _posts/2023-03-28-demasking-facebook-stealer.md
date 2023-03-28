@@ -52,3 +52,8 @@ I took a hard look for a PE32 executable or any DLL and we picked "_E43ECE427A50
 
 I tried again with other solutions like [intezer.com](https://analyze.intezer.com/analyses/115627b7-293d-42f8-9aa4-0557cc7b9531) and [filescan.io](https://www.filescan.io/uploads/641da6019c109cf74b2f2b00/reports/d2899a08-75da-449b-8512-822c350b1613) where we can virtually deploy our sample on a virtual machine to observe its behavior intezer.com shows that our malware tried to extract data from chrome, extract data from registery key ![image](https://user-images.githubusercontent.com/60641238/228135263-9c512ae6-9fee-4dd8-8087-c9a514a787b1.png) .
 
+ What remains to say is to be aware of this type of threat in the future as it's starting to spread and remember to be cautious when you download junk over the internet.
+ 
+ 
+ Here's my [sample](https://www.dropbox.com/s/zmxib4rj6wzsd6a/ChatGPT_fake_ad_camp.zip?dl=0) used.
+ 
