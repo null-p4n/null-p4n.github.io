@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Aplicații de mesagerie alternative la WhatsApp și Telegram"
-date: '2023-03-28 19:13:56 +0300'
+date: '2022-03-10 19:13:56 +0300'
 ---
 
 Aplicații de mesagerie alternative la WhatsApp și Telegram
