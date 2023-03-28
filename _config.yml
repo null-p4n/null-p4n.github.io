@@ -13,39 +13,36 @@ baseurl: ""
 lang: en
 
 # Change to your timezone › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
-timezone:
+timezone: Europe/Bucharest
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Chirpy # the main title
+title: Security BULLETIN # the main title
 
-tagline: A text-focused Jekyll theme # it will display as the sub-title
+tagline: security, vulnerabilitys, ctfs, certs, geek, privacy, osint # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
-  A minimal, responsive and feature-rich Jekyll theme for technical writing.
+  I'm NULLPWN a security professional oriented in the sphere of web applications, physical penetration testing, and red teaming. When I'm not hacking I cook, sing or write come and join me on this journey by reading my articles.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: ""
+url: "https://nullpwn.com"
 
 github:
-  username: github_username # change to your github username
+  username: null-p4n # change to your github username
 
 twitter:
-  username: twitter_username # change to your twitter username
+  username: NULLPWN # change to your twitter username
 
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: your_full_name
-  email: example@domain.com # change to your email address
+  name: NULLPWN
+  email: nullpwn@tutanota.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/username # change to your twitter homepage
-    - https://github.com/username # change to your github homepage
-    # Uncomment below to add more social links
-    # - https://www.facebook.com/username
-    # - https://www.linkedin.com/in/username
+    - https://twitter.com/nullpwn # change to your twitter homepage
+    - https://github.com/null-p4n # add more social links
 
 google_site_verification: # fill in to your verification string
 
@@ -70,7 +67,7 @@ google_analytics:
 #     light  - Use the light color scheme
 #     dark   - Use the dark color scheme
 #
-theme_mode: # [light|dark]
+theme_mode: dark
 
 # The CDN endpoint for images.
 # Notice that once it is assigned, the CDN url
@@ -80,7 +77,7 @@ theme_mode: # [light|dark]
 img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar:
+avatar: https://www.executivegrapevine.com/uploads/articles/Philippines-security-cat_2.jpg
 
 # boolean type, the global switch for TOC in posts.
 toc: true
@@ -111,7 +108,7 @@ assets:
     enabled: # boolean, keep empty means false
     # specify the Jekyll environment, empty means both
     # only works if `assets.self_host.enabled` is 'true'
-    env: # [development|production]
+    env: production
 
 pwa:
   enabled: true # the option for PWA feature
