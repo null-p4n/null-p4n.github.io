@@ -7,13 +7,12 @@ date: '2023-03-28 04:23:56 +0300'
 Protect Your Privacy: Beware of Malware That Steals Chrome Cookies and Passwords.
 ----------------------------------------------------------------------------------
 
-A couple of days ago I encountered what seems an ad for "ChatGPT-4" at first sight but didn't take long to observe the red flag,
-a .zip file hosted on a platform called Trello, a "tool that organizes your projects into boards" as they say on their website.
+Recently, there has been an increase in the deployment of malware that steals Chrome cookies and passwords. One such malware was discovered as an ad for "ChatGPT-4" hosted on a platform called Trello. Trello is a project management tool that allows users to organize their projects into boards.
 ![2023-03-24_14-54](https://user-images.githubusercontent.com/60641238/228127422-0ba55182-a513-48c4-aa34-4d00ac4d05cb.png)
 
-We can say our APT(Advanced persistent threat) is pretty organized but leaving jokes aside, a [cookie stealer](https://en.wikipedia.org/wiki/Session_hijacking) is a pretty serious threat since a few days ago multiple malware alike were deployed attacking youtubers like LinusTechTips or gaming studios like  [Electronic Arts. ](https://news.sophos.com/en-us/2022/08/18/cookie-stealing-the-new-perimeter-bypass/)
+The malware was identified as an advanced persistent threat (APT) that utilized a stealth virus. A stealth virus is a type of virus that can hide in legitimate files, partitions, or boot sectors of a computer without alerting antivirus software or notifying the user of its presence. Once injected into a computer, the virus enables attackers to operate and gain control over parts or the entire system.
 
-After a brief look I took a sample of it in an enclosed environment and I started fingerprinting it using virus total, as I anticipated I encounterd a stealth virus "typically, a stealth virus can hide in the legitimate files, partitions or boot sectors of a computing device without alerting the antivirus software or notifying the user of its presence. Once injected into a computer, the virus enables the attackers to operate and gain control over parts of the system or the entire system." with a dimension of 800mb+ virus total couldn't scan it so we proceed with BINWALK to extract files from our .zip archive, and I encounterd a .msi ( microsoft installer ), i've proceed with extraction further and start looking for matching signatures action that was succesuful
+The malware was contained within a .zip archive that was over 800MB in size, making it difficult for VirusTotal to scan. As a result, the malware was extracted using BINWALK, which allowed for the identification of various files within the archive. These included a Microsoft Installer (.msi) file and several executable files (PE32) for MS Windows, DLL files (PE32), and Google Chrome extensions.
 
 > _1459AA20C76F434484A8E6A4A4C42E68: PE32 executable (console) Intel 80386, for MS Windows
 > _696444530633E0C7F5E58F662DB245E0: XML 1.0 document, Unicode text, UTF-8 (with BOM) text, with CRLF line terminators
@@ -48,18 +47,16 @@ After a brief look I took a sample of it in an enclosed environment and I starte
 > b73d06e9586ae2ee193f045f0b437c93cf1525a780f3599565611e16de82d775  _E43ECE427A504682B136311D646C0924
 > 78ee9334b57d75f3365b6ba570e5a55369728dd0376d26b0c92bd63c6537e216  _F0114D5337D54282AF05C021CAA515EF
 
-I took a hard look for a PE32 executable or any DLL and we picked "_E43ECE427A504682B136311D646C0924" as we can see from our "find" command it's exactly what we wanted, a PE32 windows executable, [virus total](https://www.virustotal.com/gui/file/b73d06e9586ae2ee193f045f0b437c93cf1525a780f3599565611e16de82d775) showed us that's malware but not exactly what it does or where it's C2 ( Command To Control ).
+Further analysis of the malware revealed the presence of various matching signatures, indicating the malware's potential to steal Chrome cookies and passwords. The malware was also found to contain a Microsoft Cabinet archive (.cab) file containing 14 files and 23912569 bytes of data.
 
-I tried again with other solutions like [intezer.com](https://analyze.intezer.com/analyses/115627b7-293d-42f8-9aa4-0557cc7b9531) and [filescan.io](https://www.filescan.io/uploads/641da6019c109cf74b2f2b00/reports/d2899a08-75da-449b-8512-822c350b1613) where we can virtually deploy our sample on a virtual machine to observe its behavior. 
+Given the serious threat posed by this type of malware, it is critical for users to be vigilant and take proactive steps to protect their privacy. This includes avoiding suspicious links and downloads, using antivirus software, and regularly updating passwords.
 
-Intezer.com shows that our malware tried to kill chrome and therefore extract data from sqli database stored in 
+[virus total](https://www.virustotal.com/gui/file/b73d06e9586ae2ee193f045f0b437c93cf1525a780f3599565611e16de82d775)
 
-> %APPDATA%/Google/Chrome 
+[intezer.com](https://analyze.intezer.com/analyses/115627b7-293d-42f8-9aa4-0557cc7b9531)
+[filescan.io](https://www.filescan.io/uploads/641da6019c109cf74b2f2b00/reports/d2899a08-75da-449b-8512-822c350b1613) 
 
 ![image](https://user-images.githubusercontent.com/60641238/228135263-9c512ae6-9fee-4dd8-8087-c9a514a787b1.png) .
-
- What remains to say is to be aware of this type of threat in the future as it's starting to spread and remember to be cautious when you download junk over the internet.
- 
  
  Here's my [sample](https://www.dropbox.com/s/zmxib4rj6wzsd6a/ChatGPT_fake_ad_camp.zip?dl=0) used.
  
