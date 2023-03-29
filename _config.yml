@@ -20,10 +20,10 @@ timezone: Europe/Bucharest
 
 title: Security BULLETIN # the main title
 
-tagline: security, vulnerabilitys, ctfs, certs, geek, privacy, osint # it will display as the sub-title
+tagline: I'm NULLPWN a security professional oriented in the sphere of web applications, physical penetration testing, and red teaming. When Im not hacking I cook, sing or write come and join me on this journey by reading my articles.
 
 description: >- # used by seo meta and the atom feed
-  I'm NULLPWN a security professional oriented in the sphere of web applications, physical penetration testing, and red teaming. When I'm not hacking I cook, sing or write come and join me on this journey by reading my articles.
+  I'm NULLPWN a security professional oriented in the sphere of web applications, physical penetration testing, and red teaming. When Im not hacking I cook, sing or write come and join me on this journey by reading my articles.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: "https://nullpwn.com"
